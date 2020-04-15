@@ -26,6 +26,7 @@ import { CasePgNotFoundRouteComponent } from './case-pg-not-found-route/case-pg-
 import {AuthGuard} from './services/auth-guard.service';
 import {CitoyenClasse} from './services/citoyen-classe';
 import { VivaSglInfoCmpComponent } from './viva-sgl-info-cmp/viva-sgl-info-cmp.component';
+import { DashboardSignInCmpComponent } from './dashboard-sign-in-cmp/dashboard-sign-in-cmp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { VivaSglInfoCmpComponent } from './viva-sgl-info-cmp/viva-sgl-info-cmp.c
     VivaHomeCmpComponent,
     VivaTestingCmpComponent,
     CasePgNotFoundRouteComponent,
-    VivaSglInfoCmpComponent
+    VivaSglInfoCmpComponent,
+    DashboardSignInCmpComponent
   ],
     imports: [
         BrowserModule,

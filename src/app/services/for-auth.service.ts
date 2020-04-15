@@ -26,8 +26,8 @@ export class ForAuthService {
       prenom: 'dar',
       number: '+243970284772',
       genre: 'M',
-      email: 'jean.z@gmail.com',
-      password: 'jeanze.me'
+      email: 'mulondajean94@gmail.com',
+      password: 'jeanz.me'
     },
     {
       id: 3,
