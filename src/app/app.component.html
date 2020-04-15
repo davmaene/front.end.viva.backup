@@ -9,8 +9,8 @@
         <li><span class="badge badge-light text-danger">Numero d'urgence</span></li>
       </ul>
     </div>
-    <div class="cta">
-      <a routerLink="/case-statistics-route" class="scrollto nav-link">Voir les statistisques</a>
+    <div class="cta bgm-for-div">
+      <a routerLink="/case-statistics-route" class="scrollto nav-link bg-primary">Voir les statistisques</a>
     </div>
   </div>
 </section>
@@ -49,20 +49,20 @@
     <nav class="nav-menu d-none d-lg-block">
       <ul id="navbarResponsive">
         <li routerLinkActive="active"><a routerLink="/case-home">Acceuil</a></li>
-        <li routerLinkActive="active"><a routerLink="case-home#services">Actualité</a></li>
+        <li routerLinkActive="active"><a href="/case-home#services">Actualité</a></li>
         <li routerLinkActive="active"><a routerLink="/case-of-bel-route">Annononcer un cas suspect <span class="glyphicon glyphicon-bell text-danger"></span></a></li>
-<!--        <li routerLinkActive="active"><a routerLink="/case-forum-route">Forum</a></li>-->
-        <li routerLinkActive="active" *ngIf="!isAuth"><a routerLink="/case-cnx-route">Connexion</a></li>
-        <li *ngIf="isAuth"><a href="" (click)="onLookPannel()"><span class="cdf border">jddjdjdjdjd</span></a></li>
+        <li routerLinkActive="active"><a routerLink="/case-forum-route">Forum</a></li>
+        <li *ngIf="!isAuth" routerLinkActive="active" ><a routerLink="/case-cnx-route">Connexion</a></li>
+        <li *ngIf="isAuth" class="curSurD"><a (click)="onLookPannel()" class="navbar-link"><b><span class="cdf border">{{ initUser }}</span></b></a></li>
 <!--        <li><a href="#contact">Contact</a></li>-->
       </ul>
     </nav><!-- .nav-menu -->
   </div>
 </header><!-- End Header -->
 <!--  pannel when small devices -->
-  <app-viva-modal-cmp *ngIf="whantMenu"></app-viva-modal-cmp>
+  <app-viva-modal-cmp *ngIf="whantMenu" (click)="hidden()"></app-viva-modal-cmp>
 <!--  pannel when session is set -->
-  <div class="col-lg-2 float-right shadow bg-white mr-5 mt-1" *ngIf="pannel">
+  <div class="col-lg-2 col-md-6 col-sm-8 col-xs-10 float-right shadow bg-white mr-5 mt-1" *ngIf="pannel">
     <div class="container-fluid">
       <div class="col-lg p-3">
         <h4>Pannel</h4>
@@ -70,7 +70,7 @@
       <div class="list-group">
         <a href="#" class="list-group-item"><span class="fa fa-user-circle-o"></span>&nbsp;Profile</a>
         <a  routerLink="/case-forum-route" class="list-group-item"><span class="fa fa-comments"></span>&nbsp;Forum</a>
-        <a (click)="onSignOut()" href="#" class="list-group-item"><span class="fa fa-sign-out"></span>&nbsp;Deconnexion</a>
+        <a (click)="onSignOut()" class="list-group-item curSurD"><span class="fa fa-sign-out"></span>&nbsp;Deconnexion</a>
       </div>
     </div>
   </div>

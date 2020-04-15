@@ -94,12 +94,10 @@ export class VivaMapCmpComponent implements AfterViewInit, OnInit {
         if (position) {
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
-          // return [position.coords.altitude, position.coords.longitude];
+          return [position.coords.altitude, position.coords.longitude];
         }
       }, (error) => {
-        console.log(error.message);
-        this.latitude = 0;
-        this.longitude = 0;
+        alert(error.message);
       });
     }
   }

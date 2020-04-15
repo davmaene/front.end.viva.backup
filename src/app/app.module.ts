@@ -22,6 +22,10 @@ import {ForAuthService} from './services/for-auth.service';
 import { VivaTestingCmpComponent } from './viva-testing-cmp/viva-testing-cmp.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { CasePgNotFoundRouteComponent } from './case-pg-not-found-route/case-pg-not-found-route.component';
+import {AuthGuard} from './services/auth-guard.service';
+import {CitoyenClasse} from './services/citoyen-classe';
+import { VivaSglInfoCmpComponent } from './viva-sgl-info-cmp/viva-sgl-info-cmp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,9 @@ import {HttpClientModule} from '@angular/common/http';
     VivaBelCaseCmpComponent,
     VivaFootCmpComponent,
     VivaHomeCmpComponent,
-    VivaTestingCmpComponent
+    VivaTestingCmpComponent,
+    CasePgNotFoundRouteComponent,
+    VivaSglInfoCmpComponent
   ],
     imports: [
         BrowserModule,
@@ -51,7 +57,9 @@ import {HttpClientModule} from '@angular/common/http';
     ],
   providers: [
     ForStatisticsService,
-    ForAuthService
+    ForAuthService,
+    CitoyenClasse,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

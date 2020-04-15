@@ -8,7 +8,22 @@ agm-map{
   //height: 180px;
 }
 .cdm{
+  margin-top: 100px !important;
+  background-color: yellow;
   height: 420px;
+}
+.bgm-for-div{
+  // background:;
+}
+.bgm-for-div a{
+  color:darkred;
+}
+.curSurD{
+  cursor: pointer;
+}
+.bhdf{
+  background-color:darkblue;
+  //font:red;
 }
 .icon-box iframe, .icon-box object{
   width: 100% !important;
@@ -32,9 +47,11 @@ form input{
 .vm .mgn-none{
   //background-color: forestgreen;
   min-height: 100%;
+  background-color: red;
   //display: inline-block;
 }
 .vm .mgn-none object{
+  background-color: red;
   padding-top:25px ;
 }
 //@media (min-width: 1224px) {

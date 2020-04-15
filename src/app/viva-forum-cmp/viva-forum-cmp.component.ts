@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CitoyenClasse} from '../services/citoyen-classe';
+import {ForAuthService} from '../services/for-auth.service';
 
 @Component({
   selector: 'app-viva-forum-cmp',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viva-forum-cmp.component.scss']
 })
 export class VivaForumCmpComponent implements OnInit {
-
-  constructor() { }
+    public me;
+  initname: any;
+  constructor(private citoyenClasse: CitoyenClasse, private forAuthService: ForAuthService) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('currentSession')){
+      this.me = this.citoyenClasse.getMyCurrentSession();
+      this.initname = this.forAuthService.userInitialise();
+    }
   }
 
 }

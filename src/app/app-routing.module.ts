@@ -6,18 +6,24 @@ import {VivaSigninSignupCmpComponent} from './viva-signin-signup-cmp/viva-signin
 import {VivaStaticsCmpComponent} from './viva-statics-cmp/viva-statics-cmp.component';
 import {VivaForumCmpComponent} from './viva-forum-cmp/viva-forum-cmp.component';
 import {VivaTestingCmpComponent} from './viva-testing-cmp/viva-testing-cmp.component';
-const routes: Routes = [
+import {CasePgNotFoundRouteComponent} from './case-pg-not-found-route/case-pg-not-found-route.component';
+import {AuthGuard} from './services/auth-guard.service';
+import {VivaSglInfoCmpComponent} from './viva-sgl-info-cmp/viva-sgl-info-cmp.component';
+const myWay: Routes = [
   {path: '', component: VivaHomeCmpComponent },
   {path: 'case-home', component: VivaHomeCmpComponent},
   {path: 'case-of-bel-route', component: VivaBelCaseCmpComponent},
   {path: 'case-cnx-route', component: VivaSigninSignupCmpComponent},
   {path: 'case-statistics-route', component: VivaStaticsCmpComponent},
-  {path: 'case-forum-route', component: VivaForumCmpComponent},
+  {path: 'case-forum-route', canActivate: [AuthGuard], component: VivaForumCmpComponent},
   {path: 'case-testing-route', component: VivaTestingCmpComponent},
-  {path: '**', component: VivaHomeCmpComponent}
+  {path: 'case-info_route/:target', component: VivaSglInfoCmpComponent},
+  {path: 'case-page-not-found-route', component: CasePgNotFoundRouteComponent},
+  {path: 'case-cnx-route/:status', component: VivaSigninSignupCmpComponent},
+  {path: '**', redirectTo: '/case-page-not-found-route'}
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(myWay)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,46 +1,70 @@
 import {CitoyenClasse} from './citoyen-classe';
+import {Citoyen} from '../citoyen';
 
 export class ForAuthService {
+  IwantMenu = false;
+  userIsAuth = false;
+  currentSession: CitoyenClasse = new CitoyenClasse();
+  initName: any[];
   constructor() {
   }
-  public defaultUsers = [
+  public defaultUsers: any[] = [
     {
-      index: 1,
+      id: 1,
       name: 'david',
       postNom: 'maene',
+      prenom: 'dar',
+      genre: 'M',
       number: '+243970284772',
       email: 'davidmened@gmail.com',
       password: 'davidmaene.me'
     },
     {
-      index: 2,
+      id: 2,
       name: 'jean',
       postNom: 'zelote',
+      prenom: 'dar',
       number: '+243970284772',
+      genre: 'M',
       email: 'jean.z@gmail.com',
       password: 'jeanze.me'
     },
     {
-      index: 3,
+      id: 3,
       name: 'styve',
       postNom: 'bikanaba',
+      prenom: 'dar',
       number: '+243970284772',
+      genre: 'M',
       email: 'vieu.mbayo@gmail.com',
       password: 'styvemb.me'
     }
   ];
-  userIsAuth = false;
-  currentSession: CitoyenClasse = new CitoyenClasse();
   userInitialise(){
-    return [this.currentSession.uNom, this.currentSession.uPostnom];
+    if (localStorage.getItem('currentSession')){
+      this.initName = JSON.parse(localStorage.getItem('currentSession'));
+      const init = new Citoyen(JSON.parse(localStorage.getItem('currentSession')));
+      const n = init.name.toString();
+      const p = init.postNom.toString();
+      // console.log(p);
+      return n.substring(0, 1) + p.substring(0, 1);
+    }
   }
-  userSignUp(citoyen: CitoyenClasse){
-    this.currentSession = citoyen;
-    this.userIsAuth = true;
+  userSignUp(Newcitoyen){
+    // this.currentSession = Newcitoyen;
+    if (this.defaultUsers.push(Newcitoyen)) {
+      localStorage.setItem('currentSession', JSON.stringify(Newcitoyen));
+      this.userIsAuth = true;
+      return true;
+    }
   }
-  userSignIn(citoyen: CitoyenClasse){
-    this.currentSession = citoyen;
-    this.userIsAuth = true;
+  userSignIn({ident, password}){
+    // this.currentSession = citoyen;
+    // this.userIsAuth = true;
+    const cit = this.defaultUsers.find((objUser) => {
+      return objUser.email === ident && objUser.password === password;
+    });
+    return cit;
     // let user;
     // for (user of this.defaultUsers) {
     //   if (user.email === emOrPhone || user.number){
@@ -69,7 +93,12 @@ export class ForAuthService {
 // }
 // );
   userSignOut(){
+    localStorage.removeItem('currentSession');
     this.userIsAuth = false;
-    return true;
+    // return true;
+    // console.log()
+  }
+  dismiseMenu(){
+    this.IwantMenu = false;
   }
 }

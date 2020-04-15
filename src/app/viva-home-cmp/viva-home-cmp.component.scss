@@ -1,4 +1,27 @@
 .card-title img{
   width: 50px;
 }
-
+.for-small{
+  display: none;
+}
+.for-lrge{
+  display: block;
+}
+@media (max-width: 768px) {
+  .for-small{
+    display: block;
+  }
+  .for-lrge{
+    display: none;
+  }
+}
+.vm{
+  margin-top: 8px !important;
+}
+.mgn-none object{
+  margin-top: -25px;
+}
+.mtt-0{
+  padding-top: -20px;
+  margin-top: -20px;
+}

@@ -1,17 +1,12 @@
-import {Injectable} from '@angular/core';
+import {Citoyen} from '../citoyen';
 
-@Injectable()
 export class CitoyenClasse {
-  public uNom: string;
-  public uPostnom: string;
-  // public uPrenom: string;
-  // public uPhone: string;
-  public uEmail: string;
-  // public uGenre: any;
-  public uAdd: CitoyenClasse[];
   constructor() {
-    // this.uNom = nm;
-    // this.uPostnom = pstnm;
-    // this.uEmail = em;
+  }
+  public getMyCurrentSession(){
+    if (localStorage.getItem('currentSession')){
+      const my = new Citoyen(JSON.parse(localStorage.getItem('currentSession')));
+      return my;
+    }
   }
 }

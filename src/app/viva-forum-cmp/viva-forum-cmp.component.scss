@@ -1,7 +1,22 @@
 * {
   font-size: 13px;
 }
-
+span b{
+  float: right;
+  padding-right: 3%;
+}
+.initUser{
+  height: 42px !important;
+  font-size: 32px !important;
+  line-height: 42px;
+  border-radius: 5px;
+}
+.initUser span{
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
 .direct-chat.chat-pane-open .direct-chat-contacts {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);

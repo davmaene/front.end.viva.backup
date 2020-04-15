@@ -32,15 +32,43 @@ export class ForStatisticsService {
     ]
   }
   public barChartLabels = [
-    'Nord-kivu', 'Sud-kivu', 'Maniema', 'Congo-central',
-    'Tanganyika', 'Kasai-oriental', 'Kinshasa', 'Haut-lomami', 'Haut-katanga', 'Ituri'];
+    'Kinshasa',
+    'Kongo-Central',
+    'Maï-Ndombe',
+    'Kwango',
+    'Nord-Kivu',
+    'Sud-Kivu',
+    'Sud-Ubangi',
+    'Nord-Ubangi',
+    'Mongala',
+    'Kasaï-Oriental',
+    'Haut-Katanga',
+    'Maniema',
+    'Tanganyika',
+    'Sankuru',
+    'Kasaï-Central',
+    'Haut-Lomami',
+    'Lomami',
+    'Kwilu',
+    'Tshopo',
+    'Ituri',
+    'Kasaï',
+    'Lualaba',
+    'Tshuapa',
+    'Bas-Uele',
+    'Equateur',
+    'Haut-Uele',
+  ];
   public barChartType = 'bar';
   public barChartLegend = true;
   public barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40, 54, 30, 20], label: 'Confirmé'},
-    {data: [28, 48, 40, 19, 86, 27, 86, 34, 60, 10], label: 'Guérit'},
-    {data: [25, 10, 8, 40, 86, 27, 70, 8, 34, 45, 60], label: 'Decès'}
-
-
+    {data: [222, 0, 0, 0, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0], label: 'Cas Confirmé'},
+    {data: [19, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Guérit'},
+    {data: [21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Décès'}
   ];
+  public statistics = {
+    casConfirmer: 254,
+    death: 21,
+    guerit: 21
+  };
 }
