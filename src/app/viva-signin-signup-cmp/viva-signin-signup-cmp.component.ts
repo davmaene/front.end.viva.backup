@@ -93,6 +93,7 @@ export class VivaSigninSignupCmpComponent implements OnInit {
                     if (this.forAuthService.userSignUp(this.newCitoyen)) {
                       window.location.reload();
                       this.successMess = true;
+                      // console.log('parfait')
                       setTimeout(() => {
                         this.route.navigate(['/case-forum-route']);
                       }, 200);
